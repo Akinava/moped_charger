@@ -1,5 +1,1 @@
-gcc-avr
-binutils-avr
-avr-libc
-gdb-avr
-avrdude
+gcc-avr binutils-avr avr-libc gdb-avr avrdude

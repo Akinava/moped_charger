@@ -43,14 +43,6 @@
 #define BAT_2_RELAY_PORT PORTB
 #define BAT_2_RELAY_PIN PB0
 
-//                Attiny 85
-//                 +----------+
-//  ----(RST)------+ PB5  Vcc +---(+)-------
-//  -(POWER_CHECK)-+ PB3  PB2 +(POWER_RELAY)-
-//  -(FAN_CHECK)---+ PB4  PB1 +(BAT_1_RELAY)-
-//  ------(-)------+ GND  PB0 +(BAT_2_RELAY)-
-//                 +----------+
-
 void power_on(void){
     SET_HIGH(POWER_RELAY_PORT, POWER_RELAY_PIN);
 }
@@ -130,6 +122,5 @@ int main(void){
     for (;;){
         charge();
         _delay_ms(100);
-
     }
 }
