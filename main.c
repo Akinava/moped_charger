@@ -100,19 +100,16 @@ void charge(void){
     _delay_ms(3000);
     while(CHECK_PIN(FAN_CHECK_PINS, FAN_CHECK_PIN)){_delay_ms(100);}
 
-    if(!CHECK_PIN(POWER_CHECK_PINS, POWER_CHECK_PIN)){
-        soft_reset_power();
-        return;
-    }
+    soft_reset_power();
+    if(!CHECK_PIN(POWER_CHECK_PINS, POWER_CHECK_PIN)){return;}
 
     bat_1_off();
     _delay_ms(3000);
-    bat_2_on();
+    power_on();
     _delay_ms(3000);
     while(CHECK_PIN(FAN_CHECK_PINS, FAN_CHECK_PIN)){_delay_ms(100);}
 
     soft_reset_power();
-
     while(CHECK_PIN(POWER_CHECK_PINS, POWER_CHECK_PIN)){_delay_ms(100);}
 }
 
